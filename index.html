@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تاریخ امروز شمسی</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.js"></script>
+  <style>
+    body {
+      direction: rtl;
+      font-family: sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    #today {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h3>تاریخ امروز (شمسی)</h3>
+  <div id="today"></div>
+
+  <script>
+    $(function(){
+      if (typeof persianDate !== "undefined") {
+        var today = new persianDate().format('YYYY/MM/DD');
+        $('#today').text(today);
+      } else {
+        $('#today').text("کتابخانه لود نشد");
+      }
+    });
+  </script>
+</body>
+</html>
